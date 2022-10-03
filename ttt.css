@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    }
+
+body {
+    background-color: #1c1c1c;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    font-size: 0;
+    margin: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+    
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: solid .5px rgb(70, 70, 70);
+    padding: 0px;
+    margin: 0px;
+    background-color: #1c1c1c;
+}
+
+#one, #two, #three {
+    border-top: 0px;
+}
+
+#one, #four, #seven {
+    border-left: 0px;
+}
+
+#three, #six, #nine {
+    border-right: 0px;
+}
+
+#seven, #eight, #nine {
+    border-bottom: 0px;
+}
+
+#cross {
+    transform: rotate(45deg);
+    background: white;
+    height: 25px;
+    position: relative;
+    width: 5px;
+  }
+  #cross:after {
+    background: rgb(255, 255, 255);
+    content: "";
+    height: 5px;
+    left: -10px;
+    position: absolute;
+    top: 10px;
+    width: 25px;
+  }
+
+  #crossopacity {
+    pointer-events:none;
+    opacity: 50%;
+    transform: rotate(45deg);
+    background: rgb(70, 70, 70);
+    height: 25px;
+    position: relative;
+    width: 5px;
+  }
+  #crossopacity:after {
+    pointer-events:none;
+    background: rgb(70, 70, 70);
+    content: "";
+    height: 5px;
+    left: -10px;
+    position: absolute;
+    top: 10px;
+    width: 25px;
+  }
+
+  #noughts {
+    height: 20px;
+    width: 20px;
+    border: solid 5px white;
+    border-radius: 20px;
+  }
+  #noughtsopacity {
+    pointer-events:none;
+    height: 20px;
+    width: 20px;
+    border: solid 5px rgb(70, 70, 70);
+    border-radius: 20px;
+  }
+
+  #test {
+    color: aliceblue;
+    content: "bbubyb";
+  }
