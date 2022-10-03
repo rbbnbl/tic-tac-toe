@@ -56,6 +56,8 @@ button {
     height: 25px;
     position: relative;
     width: 5px;
+    animation-duration: 1s;
+    animation-name: crossesfade;
   }
   #cross:after {
     background: rgb(255, 255, 255);
@@ -65,7 +67,20 @@ button {
     position: absolute;
     top: 10px;
     width: 25px;
+    animation-duration: 1s;
+    animation-name: crossesfade;
   }
+
+  @keyframes crossesfade {
+    from {
+      background: rgb(70, 70, 70);
+    }
+  
+    to {
+      background: white;
+    }
+  }
+
 
   #crossopacity {
     pointer-events:none;
@@ -75,6 +90,8 @@ button {
     height: 25px;
     position: relative;
     width: 5px;
+    animation-duration: .5s;
+    animation-name: crossopacityfade;
   }
   #crossopacity:after {
     pointer-events:none;
@@ -85,6 +102,54 @@ button {
     position: absolute;
     top: 10px;
     width: 25px;
+    animation-duration: .5s;
+    animation-name: crossopacityfade;
+  }
+
+  @keyframes crossopacityfade {
+    from {
+      background: #1c1c1c;
+    }
+  
+    to {
+      background: rgb(70, 70, 70);
+    }
+  }
+
+  #crossopacityfadeaway {
+    pointer-events:none;
+    opacity: 50%;
+    transform: rotate(45deg);
+    background: #1c1c1c;
+    height: 25px;
+    position: relative;
+    width: 5px;
+    animation-duration: 1s;
+    animation-name: crossopacityfadeaway;
+    animation-iteration-count: 1;
+  }
+
+  #crossopacityfadeaway:after {
+    pointer-events:none;
+    background: #1c1c1c;
+    content: "";
+    height: 5px;
+    left: -10px;
+    position: absolute;
+    top: 10px;
+    width: 25px;
+    animation-duration: 1s;
+    animation-name: crossopacityfadeaway;
+  }
+
+  @keyframes crossopacityfadeaway {
+    from {
+      background: rgb(70, 70, 70);
+    }
+  
+    to {
+      background: #1c1c1c;
+    }
   }
 
   #noughts {
@@ -92,16 +157,54 @@ button {
     width: 20px;
     border: solid 5px white;
     border-radius: 20px;
+    animation-duration: 1s;
+    animation-name: noughtsfade;
   }
+  @keyframes noughtsfade {
+    from {
+      border: solid 5px rgb(70, 70, 70);
+    }
+  
+    to {
+      border: solid 5px white;
+    }
+  }
+
   #noughtsopacity {
     pointer-events:none;
     height: 20px;
     width: 20px;
     border: solid 5px rgb(70, 70, 70);
     border-radius: 20px;
+    animation-duration: .5s;
+    animation-name: noughtsopacityfade;
   }
 
-  #test {
-    color: aliceblue;
-    content: "bbubyb";
+  @keyframes noughtsopacityfade {
+    from {
+      border: solid 5px #1c1c1c;
+    }
+  
+    to {
+      border: solid 5px rgb(70, 70, 70);
+    }
+  }
+
+  #noughtsopacityfadeaway {
+    pointer-events:none;
+    height: 20px;
+    width: 20px;
+    border: #1c1c1c;
+    border-radius: 20px;
+    animation-duration: 1s;
+    animation-name: noughtsopacityfadeaway;
+  }
+
+  @keyframes noughtsopacityfadeaway {
+    from {
+      border: solid 5px rgb(70, 70, 70);
+    }
+    to {
+      border: #1c1c1c;
+    }
   }

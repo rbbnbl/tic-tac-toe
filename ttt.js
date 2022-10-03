@@ -23,7 +23,11 @@ function over() {
 }
 
 function out() {
-    document.getElementById(where).innerHTML = '<p id=""></p>';
+    if (count%2 === 0){
+        document.getElementById(where).innerHTML = '<p id="crossopacityfadeaway"></p>';
+    } else {
+        document.getElementById(where).innerHTML = '<p id="noughtsopacityfadeaway"></p>';
+    }
 }
 
 function counter() {
