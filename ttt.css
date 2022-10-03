@@ -5,40 +5,57 @@
     }
 
 body {
-    background-color: #1c1c1c;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+        -45deg, 
+        rgb(5, 63, 88) 0%, 
+        rgb(50, 6, 58) 25%, 
+        rgb(34, 60, 99)50%, 
+        rgb(31, 31, 31) 100%
+  );  
+  animation: AnimateBG 10s ease infinite;
+}
+
+@keyframes AnimateBG { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 #buttonscontainer {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #1c1c1c;
   height: 100vh;
+  width: 100vw;
+  border-radius: 50px;
+
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
+    height: 300px;
+    width: 300px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    width: 100%;
 }
     
 button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    width: 10vh;
-    border: solid .5px rgb(70, 70, 70);
-    padding: 0px;
+    height: 100px;
+    width: 100px;
     margin: 0px;
-    background-color: #1c1c1c;
+    background-color: #ffffff;
+    opacity: 10%;
 }
 
 #one, #two, #three {
@@ -55,6 +72,20 @@ button {
 
 #seven, #eight, #nine {
     border-bottom: 0px;
+}
+
+#one {
+  border-top-left-radius: 30px;
+}
+#three {
+  border-top-right-radius: 30px;
+}
+#seven {
+  border-bottom-left-radius: 30px;
+}
+
+#nine {
+  border-bottom-right-radius: 30px;
 }
 
 #cross {
