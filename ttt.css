@@ -331,21 +331,22 @@ button {
   }
 
 #scorebug {
+  margin-top: 20px;
   position: absolute;
+  z-index: 0;
 }
 
 #reset {
   position: absolute;
   z-index: 1;
-  color: yellow;
+  color: rgb(255, 255, 255);
   position: absolute;
-  background: blue;
 }
 
 #scoreBugBG{
   position: absolute;
-  height: 200px;
-  width:200px;
+  height: 100px;
+  width:150px;
   position: absolute;
   background: rgb(255, 255, 255);
   opacity: 30%;
