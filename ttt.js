@@ -104,12 +104,20 @@ function winningCombo(combo, player){
     }
 }
 
+function reset() {
+    redLog = [];
+    blueLog = [];
+    count = 0;
+    backgroundReset();
+    enableButtons();
+}
+
 //winning checker
 
 function gameOver() {
     if (combo1.every(value => { 
         return redLog.includes(value)})) {
-            winningCombo(combo1, "cross")
+            winningCombo(combo1, "cross");
         /*
         || 
         combo2.every(value => { 
@@ -210,3 +218,6 @@ document.getElementById("eight").addEventListener("mouseout", function(){ where 
 document.getElementById("nine").addEventListener("click", function(){ where = "nine"; counter()});
 document.getElementById("nine").addEventListener("mouseover", function(){ where = "nine"; over()});
 document.getElementById("nine").addEventListener("mouseout", function(){ where = "nine"; out()});
+
+//reset button
+document.getElementById("reset").addEventListener("click", reset);

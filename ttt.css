@@ -6,7 +6,7 @@
 
 #buttonscontainer {
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,6 @@
 }
     
 button {
-    color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,8 +98,6 @@ button {
     position: absolute;
     top: 10px;
     width: 25px;
-    animation-duration: .5s;
-    animation-name: crossesfade;
   }
 
   @keyframes crossesfade {
@@ -160,7 +157,6 @@ button {
     animation-name: losingcross;
   }
   #losingcross:after {
-    opacity: 50%;
     pointer-events:none;
     background: rgb(242, 242, 242);
     content: "";
@@ -170,7 +166,6 @@ button {
     top: 10px;
     width: 25px;
     animation-duration: 2s;
-    animation-name: losingcross;
   }
 
   @keyframes losingcross {
@@ -212,6 +207,7 @@ button {
   #crossopacity {
     pointer-events:none;
     transform: rotate(45deg);
+    opacity: 50%;
     background: rgb(242, 242, 242);
     height: 25px;
     position: relative;
@@ -228,25 +224,23 @@ button {
     position: absolute;
     top: 10px;
     width: 25px;
-    animation-duration: .5s;
-    animation-name: crossopacityfade;
   }
 
   @keyframes crossopacityfade {
     from {
-      background: transparent;
+      opacity: 0%;
     }
   
     to {
-      background: rgb(242, 242, 242);
+      opacity: 50%;
     }
   }
 
   #crossopacityfadeaway {
     pointer-events:none;
-    opacity: 50%;
+    opacity: 0%;
     transform: rotate(45deg);
-    background: transparent;
+    background: white;
     height: 25px;
     position: relative;
     width: 5px;
@@ -257,24 +251,22 @@ button {
 
   #crossopacityfadeaway:after {
     pointer-events:none;
-    background: transparent;
+    background: white;
     content: "";
     height: 5px;
     left: -10px;
     position: absolute;
     top: 10px;
     width: 25px;
-    animation-duration: 2s;
-    animation-name: crossopacityfadeaway;
   }
 
   @keyframes crossopacityfadeaway {
     from {
-      background: rgb(242, 242, 242);
+      opacity: 50%;
     }
   
     to {
-      background: transparent;
+      opacity: 0%;
     }
   }
 
@@ -337,3 +329,25 @@ button {
       border: solid 5px transparent;
     }
   }
+
+#scorebug {
+  position: absolute;
+}
+
+#reset {
+  position: absolute;
+  z-index: 1;
+  color: yellow;
+  position: absolute;
+  background: blue;
+}
+
+#scoreBugBG{
+  position: absolute;
+  height: 200px;
+  width:200px;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  opacity: 30%;
+  border-radius: 30px;
+}
