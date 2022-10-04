@@ -1,10 +1,10 @@
-const bg = "#1c1c1c"; 
 var count = 0;
 var where;
 var blueLog = [];
 var redLog = [];
 
 //winning combinations
+const all = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const combo1 = ['one', 'two', 'three'];
 const combo2 = ['four', 'five', 'six'];
 const combo3 = ['seven', 'eight', 'nine'];
@@ -67,9 +67,50 @@ function enableButtons() {
     }
 }
 
+// winning sequence
+
+function winningCombo(combo, player){
+    //winners
+
+    for (i= 0; i<3; i++) {
+        var winningHTML = document.getElementById(combo.at(i)).innerHTML;
+        
+        if (winningHTML === '<p id="cross"></p>') {
+            document.getElementById(combo.at(i)).innerHTML = '<p id="winningcross"></p>'
+        } else if (winningHTML === '<p id="noughts"></p>') {
+            document.getElementById(combo.at(i)).innerHTML = '<p id="winningnought"></p>';
+        }
+    }
+
+    //losers
+
+    var allstring = all.toString();
+
+    for(i=0; i<3; i++) {
+        var checker = combo.at(i);
+        var allstring = allstring.replace(`${checker},`, "");
+    }
+
+    allstringarray = allstring.split(",");
+
+    for (i= 0; i<6; i++) {
+        var currentHTML = document.getElementById(allstringarray.at(i)).innerHTML;
+        
+        if (currentHTML === '<p id="cross"></p>') {
+            document.getElementById(allstringarray.at(i)).innerHTML = '<p id="losingcross"></p>'
+        } else if (currentHTML === '<p id="noughts"></p>') {
+            document.getElementById(allstringarray.at(i)).innerHTML = '<p id="losingnought"></p>';
+        }
+    }
+}
+
+//winning checker
+
 function gameOver() {
     if (combo1.every(value => { 
-        return redLog.includes(value)}) 
+        return redLog.includes(value)})) {
+            winningCombo(combo1, "cross")
+        /*
         || 
         combo2.every(value => { 
         return redLog.includes(value)}) 
@@ -92,12 +133,14 @@ function gameOver() {
         combo8.every(value => { 
         return redLog.includes(value)}) 
         ) {
-        alert("crosses wins");
-        redLog = [];
-        blueLog = [];
-        backgroundReset();
-        enableButtons();
-        count = 0;
+        */
+        //alert("crosses wins");
+        // winningCombo(combo1, crosses);
+        //redLog = [];
+        //blueLog = [];
+        //backgroundReset();
+        //enableButtons();
+        //count = 0;
     } else if (combo1.every(value => { 
         return blueLog.includes(value)}) 
         || 
@@ -122,12 +165,13 @@ function gameOver() {
         combo8.every(value => { 
         return blueLog.includes(value)}) 
         ) {
-        alert("noughts wins");
-        redLog = [];
-        blueLog = [];
-        backgroundReset();
-        enableButtons();
-        count = 0;
+        winningCombo();
+        //alert("noughts wins");
+        //redLog = [];
+        //blueLog = [];
+        //backgroundReset();
+        //enableButtons();
+        //count = 0;
     } else if (count===9) {
         alert("nobody wins");
         backgroundReset();
