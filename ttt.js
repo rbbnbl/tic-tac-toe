@@ -33,7 +33,6 @@ function out() {
 function counter() {
     document.getElementById(where).disabled = true;
     count++;
-    console.log(count);
     return colorButton(count);
 }
 
@@ -103,6 +102,15 @@ function winningCombo(combo, player){
         }
     }
 }
+var crossScore = 0;
+var noughtScore = 0;
+function score() {
+    crossScore++;
+    noughtScore++;
+    console.log(crossScore)
+    document.getElementById("crossScore").textContent = `${crossScore}`;
+    document.getElementById("noughtScore").textContent = `${noughtScore}`;
+}
 
 function reset() {
     redLog = [];
@@ -115,72 +123,62 @@ function reset() {
 //winning checker
 
 function gameOver() {
-    if (combo1.every(value => { 
-        return redLog.includes(value)})) {
+        if (combo1.every(value => { 
+            return redLog.includes(value)})) {
             winningCombo(combo1, "cross");
-        /*
-        || 
-        combo2.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo3.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo4.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo5.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo6.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo7.every(value => { 
-        return redLog.includes(value)}) 
-        ||
-        combo8.every(value => { 
-        return redLog.includes(value)}) 
-        ) {
-        */
-        //alert("crosses wins");
-        // winningCombo(combo1, crosses);
-        //redLog = [];
-        //blueLog = [];
-        //backgroundReset();
-        //enableButtons();
-        //count = 0;
-    } else if (combo1.every(value => { 
-        return blueLog.includes(value)}) 
-        || 
-        combo2.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo3.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo4.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo5.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo6.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo7.every(value => { 
-        return blueLog.includes(value)}) 
-        ||
-        combo8.every(value => { 
-        return blueLog.includes(value)}) 
-        ) {
-        winningCombo();
+        } else if (combo2.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo2, "cross");
+        } else if (combo3.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo3, "cross");
+        } else if (combo4.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo4, "cross");
+        } else if (combo5.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo5, "cross");
+        } else if (combo6.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo6, "cross");
+        } else if (combo7.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo7, "cross");
+        } else if (combo8.every(value => { 
+            return redLog.includes(value)})) {
+            winningCombo(combo8, "cross");
+        } else if (combo1.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo1, "nought");
+        } else if (combo2.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo2, "nought");
+        } else if (combo3.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo3, "nought");
+        } else if (combo4.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo4, "nought");
+        } else if (combo5.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo5, "nought");
+        } else if (combo6.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo6, "nought");
+        } else if (combo7.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo7, "nought");
+        } else if (combo8.every(value => { 
+            return blueLog.includes(value)})) {
+            winningCombo(combo8, "nought");
+        }  
         //alert("noughts wins");
         //redLog = [];
         //blueLog = [];
         //backgroundReset();
         //enableButtons();
         //count = 0;
-    } else if (count===9) {
+          else if (count===9) {
         alert("nobody wins");
         backgroundReset();
         enableButtons();
@@ -221,3 +219,4 @@ document.getElementById("nine").addEventListener("mouseout", function(){ where =
 
 //reset button
 document.getElementById("reset").addEventListener("click", reset);
+document.getElementById("reset").addEventListener("click", score);

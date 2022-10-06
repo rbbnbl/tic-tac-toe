@@ -3,14 +3,17 @@
     padding: 0;
     border: 0;
     }
-
-#buttonscontainer {
-  position: absolute;
-  z-index: 0;
+#master {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+#gradientBG {
+  position: absolute;
+  z-index: -100;
   height: 100vh;
   width: 100vw;
   background-size: 300% 300%;
@@ -25,9 +28,12 @@
 }
 
 @keyframes AnimateBG { 
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+#buttonscontainer { 
 }
 
 #buttons {
@@ -58,12 +64,65 @@ button {
 #transbg {
   position: absolute;
   z-index: -1;
-  border-radius: 30px;
+  border-radius: 20px 20px 0px 0px;
   height: 300px;
   width: 300px;
-  opacity: 30%;
+  opacity: 40%;
   background: rgb(255, 255, 255);
 }
+
+/* scorebug */
+
+#scoreBug {
+  display: flex;
+  width: 300px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#score {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+#reset {
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  width: fit-content;
+  height: fit-content;
+}
+
+#scoreBugBG{
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  height: 100px;
+  width: 300px;
+  background: rgb(255, 255, 255);
+  opacity: 20%;
+  border-radius: 0px 0px 20px 20px;
+}
+
+#crosscontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+
+#noughtcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+/* borders */
 
 #one, #two, #three {
     border-top: 0px;
@@ -80,6 +139,8 @@ button {
 #seven, #eight, #nine {
     border-bottom: 0px;
 }
+
+/* basics */
 
 #cross {
     transform: rotate(45deg);
@@ -110,6 +171,27 @@ button {
     }
   }
 
+  #noughts {
+    height: 20px;
+    width: 20px;
+    border: solid 5px white;
+    border-radius: 20px;
+    animation-duration: .5s;
+    animation-name: noughtsfade;
+  }
+  @keyframes noughtsfade {
+    from {
+      border: solid 5px white;
+      opacity: 50%;
+    }
+  
+    to {
+      border: solid 5px white;
+    }
+  }
+
+  /* winning */
+
   #winningcross{
     pointer-events:none;
     transform: rotate(45deg);
@@ -117,7 +199,6 @@ button {
     height: 25px;
     position: relative;
     width: 5px;
-    animation-duration: 2s;
     animation: winningcross 2s infinite;
   }
   #winningcross:after {
@@ -144,6 +225,31 @@ button {
       transform: rotate(45deg) scale(1);
     }
   }
+
+  #winningnought {
+    height: 20px;
+    width: 20px;
+    border: solid 5px white;
+    border-radius: 20px;
+    animation-duration: 2s;
+    animation: winningnought 2s infinite;
+  }
+
+  @keyframes winningnought {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    
+    75% {
+      transform: rotate(45deg) scale(1.25);
+    }
+    
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }
+
+   /* losing */
 
   #losingcross{
     opacity: 50%;
@@ -202,7 +308,7 @@ button {
     }
   }
   
-
+/* opacity */
 
   #crossopacity {
     pointer-events:none;
@@ -270,25 +376,6 @@ button {
     }
   }
 
-  #noughts {
-    height: 20px;
-    width: 20px;
-    border: solid 5px white;
-    border-radius: 20px;
-    animation-duration: .5s;
-    animation-name: noughtsfade;
-  }
-  @keyframes noughtsfade {
-    from {
-      border: solid 5px white;
-      opacity: 50%;
-    }
-  
-    to {
-      border: solid 5px white;
-    }
-  }
-
   #noughtsopacity {
     pointer-events:none;
     height: 20px;
@@ -329,26 +416,3 @@ button {
       border: solid 5px transparent;
     }
   }
-
-#scorebug {
-  margin-top: 20px;
-  position: absolute;
-  z-index: 0;
-}
-
-#reset {
-  position: absolute;
-  z-index: 1;
-  color: rgb(255, 255, 255);
-  position: absolute;
-}
-
-#scoreBugBG{
-  position: absolute;
-  height: 100px;
-  width:150px;
-  position: absolute;
-  background: rgb(255, 255, 255);
-  opacity: 30%;
-  border-radius: 30px;
-}

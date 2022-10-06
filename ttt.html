@@ -6,31 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="ttt.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="buttonscontainer">
-        <div id="buttons">
-            <div class="row" id="first-row">
-                <button class="button" id="one"></button>
-                <button class="button" id="two"></button>
-                <button class="button" id="three"></button>
-            </div>
-            <div class="row" id="second-row">
-                <button class="button" id="four"></button>
-                <button class="button" id="five"></button>
-                <button class="button" id="six"></button>
-            </div>
-            <div class="row" id="third-row">
-                <button class="button" id="seven"></button>
-                <button class="button" id="eight"></button>
-                <button class="button" id="nine"></button>
-            </div>
-            <div id="transbg"></div>
-            <div id="scoreBug" style="margin-top: 10px;">
-                <button id="reset">Reset</button>
-                <div id="scoreBugBG"></div>
+    <div id="master">
+        <div id="buttonscontainer">
+            <div id="buttons">
+                <div class="row" id="first-row">
+                    <button class="button" id="one"></button>
+                    <button class="button" id="two"></button>
+                    <button class="button" id="three"></button>
+                </div>
+                <div class="row" id="second-row">
+                    <button class="button" id="four"></button>
+                    <button class="button" id="five"></button>
+                    <button class="button" id="six"></button>
+                </div>
+                <div class="row" id="third-row">
+                    <button class="button" id="seven"></button>
+                    <button class="button" id="eight"></button>
+                    <button class="button" id="nine"></button>
+                </div>
+                <div id="transbg"></div>
             </div>
         </div>
+        <div id="scoreBug">
+            <div id="score">
+                <p id="crosscontainer"><button id="cross"></button></p>
+                <p id="crossScore">0</p>
+                <p id="noughtcontainer"><button id="noughts"></button></p>
+                <p id="noughtScore">0</p>
+            </div>
+            <button id="reset">Reset</button>
+            <div id="scoreBugBG"></div>
+        </div>
+        <div id="gradientBG"></div>
     </div>
 <script src="ttt.js"></script>
 </body>
