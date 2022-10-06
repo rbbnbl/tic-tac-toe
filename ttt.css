@@ -33,7 +33,7 @@
     100%{background-position:0% 50%}
   }
 
-#buttonscontainer { 
+#buttonscontainer {
 }
 
 #buttons {
@@ -165,16 +165,16 @@ button {
   @keyframes crossesfade {
     0% {
       transform: rotate(45deg) scale(1);
-      opacity: 50%;
+      opacity: 30%;
     }
   
     20% {
       transform: rotate(45deg) scale(.5);
-      opacity: 50%;
+      opacity: 30%;
     }
 
     60% {
-      transform: rotate(45deg) scale(1.25);
+      transform: rotate(45deg) scale(1.2);
       opacity: 100%;
     }
   
@@ -193,13 +193,24 @@ button {
     animation-name: noughtsfade;
   }
   @keyframes noughtsfade {
-    from {
-      border: solid 5px white;
-      opacity: 50%;
+    0% {
+      transform: scale(1);
+      opacity: 30%;
     }
   
-    to {
-      border: solid 5px white;
+    20% {
+      transform: scale(.5);
+      opacity: 30%;
+    }
+
+    60% {
+      transform: scale(1.2);
+      opacity: 100%;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 100%;
     }
   }
 
@@ -213,6 +224,7 @@ button {
     position: relative;
     width: 5px;
     animation: winningcross 2s infinite;
+    animation-timing-function: ease-in-out;
   }
   #winningcross:after {
     pointer-events:none;
@@ -230,8 +242,8 @@ button {
       transform: rotate(45deg) scale(1);
     }
     
-    75% {
-      transform: rotate(45deg) scale(1.25);
+    90% {
+      transform: rotate(45deg) scale(1.2);
     }
     
     100% {
@@ -265,14 +277,14 @@ button {
    /* losing */
 
   #losingcross{
-    opacity: 50%;
+    opacity: 30%;
     pointer-events:none;
     transform: rotate(45deg);
     background: rgb(242, 242, 242);
     height: 25px;
     position: relative;
     width: 5px;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-name: losingcross;
   }
   #losingcross:after {
@@ -284,7 +296,7 @@ button {
     position: absolute;
     top: 10px;
     width: 25px;
-    animation-duration: 2s;
+    animation-duration: 1s;
   }
 
   @keyframes losingcross {
@@ -295,7 +307,7 @@ button {
   
     to {
       background: rgb(255, 255, 255);
-      opacity: 50%;
+      opacity: 30%;
     }
   }
 
@@ -303,21 +315,24 @@ button {
     height: 20px;
     width: 20px;
     border: solid 5px white;
-    opacity: 50%;
+    transform: scale(.9);
+    opacity: 30%;
     border-radius: 20px;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-name: losingnought;
   }
 
   @keyframes losingnought {
     from {
+      transform: scale(1);
       border: solid 5px white;
       opacity: 100%;
     }
   
     to {
+      transform: scale(.9);
       border: solid 5px white;
-      opacity: 50%;
+      opacity: 30%;
     }
   }
   
@@ -326,7 +341,7 @@ button {
   #crossopacity {
     pointer-events:none;
     transform: rotate(45deg);
-    opacity: 50%;
+    opacity: 30%;
     background: rgb(242, 242, 242);
     height: 25px;
     position: relative;
@@ -346,12 +361,16 @@ button {
   }
 
   @keyframes crossopacityfade {
-    from {
+    0% {
       opacity: 0%;
     }
   
-    to {
-      opacity: 50%;
+    50% {
+      opacity: 20%;
+    }
+
+    100% {
+      opacity: 30%;
     }
   }
 
@@ -363,7 +382,7 @@ button {
     height: 25px;
     position: relative;
     width: 5px;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-name: crossopacityfadeaway;
     animation-iteration-count: 1;
   }
@@ -380,11 +399,15 @@ button {
   }
 
   @keyframes crossopacityfadeaway {
-    from {
-      opacity: 50%;
+    0% {
+      opacity: 30%;
     }
   
-    to {
+    50% {
+      opacity: 10%;
+    }
+
+    100% {
       opacity: 0%;
     }
   }
@@ -394,38 +417,47 @@ button {
     height: 20px;
     width: 20px;
     border: solid 5px white;
-    opacity: 50%;
+    opacity: 30%;
     border-radius: 20px;
     animation-duration: .5s;
     animation-name: noughtsopacityfade;
   }
 
   @keyframes noughtsopacityfade {
-    from {
-      border: solid 5px transparent;
+    0% {
+      opacity: 0%;
     }
-    to {
-      border: solid 5px white;
-      opacity: 50%;
+
+    50%{
+      opacity: 20%;
+    }
+
+    100% {
+      opacity: 30%;
     }
   }
 
   #noughtsopacityfadeaway {
     pointer-events:none;
+    border: solid 5px white;
+    opacity: 0%;
     height: 20px;
     width: 20px;
-    border: transparent;
     border-radius: 20px;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-name: noughtsopacityfadeaway;
   }
 
   @keyframes noughtsopacityfadeaway {
-    from {
-      border: solid 5px white;
-      opacity: 50%;
+    0% {
+      opacity: 30%;
     }
-    to {
-      border: solid 5px transparent;
+
+    50%{
+      opacity: 10%;
+    }
+
+    100% {
+      opacity: 0%;
     }
   }
